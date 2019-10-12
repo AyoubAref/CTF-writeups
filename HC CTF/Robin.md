@@ -3,10 +3,15 @@
 
 This is a write-up on how I solved Robin from HC CTF.
 
+
 There are 3 files given in this challenge:
+
 1-encripted text (flag.enc).
+
 2-public key (public_key.txt).
+
 3-python script (Robin.py) wich generates the flag and the public key.
+
 
 At the beginning we have to read the python script to understand how the message was encrypted.
 
