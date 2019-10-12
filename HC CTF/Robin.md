@@ -78,13 +78,13 @@ n = public key = 747085715795570480394000356746831890206388880971956737650361312
 
 Now we want to figure out the value of r, becuase that's the only way to find the value of p and q.
 
-I used a method called bisection method (binary search) for finding the value of r, p and q.
+I used a method called [bisection method](https://en.wikipedia.org/wiki/Bisection_method) (binary search) for finding the value of r, p and q.
 
-https://en.wikipedia.org/wiki/Bisection_method
+
 
 
 code :
-[Java](https://ideone.com/sMKy2X)
+[Java](https://ideone.com/sMKy2X),
 [Python](https://ideone.com/Xo3Vj3)
 
     for python :
@@ -98,7 +98,7 @@ code :
 
 Now we know the values of n,p,q and the cipher text , and we want to know the value of flag, wich is the square root of the cipher text modulo n.
 
-So this challange is a Rabin cryptosystem challange (https://en.wikipedia.org/wiki/Rabin_cryptosystem)
+So this challange is a [Rabin cryptosystem](https://en.wikipedia.org/wiki/Rabin_cryptosystem) challange 
 
 The Decryption algorithm run as follow :
 
@@ -116,21 +116,20 @@ The Decryption algorithm run as follow :
 I used an algorithm called binary exponentiation To compute Mp and Mq as fast as possible (time complexity O(lg(p)+lg(q))).
 
 code:
-[Java](https://ideone.com/Aj5Abe)
+[Java](https://ideone.com/Aj5Abe),
 [Python](https://ideone.com/Xr51sr)
 
 
-3. Use the extended Euclidean algorithm to find Yp and Yq such that Yp.p+Yq.q=1.
+3. Use the [extended Euclidean algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm) to find Yp and Yq such that Yp.p+Yq.q=1.
 
-https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm
 
 code: 
-[Java](https://ideone.com/UXBVBz)
+[Java](https://ideone.com/UXBVBz),
 [Python](https://ideone.com/zvJ14c)
 
-4. Use the Chinese remainder theorem to find the four square roots of c modulo n:
+4. Use the [Chinese remainder theorem](https://en.wikipedia.org/wiki/Chinese_remainder_theorem) to find the four square roots of c modulo n:
 
-https://en.wikipedia.org/wiki/Chinese_remainder_theorem
+
 
 	r1=(Yp.p.Mq+Yq.q.Mp) mod n
 	
@@ -143,7 +142,7 @@ https://en.wikipedia.org/wiki/Chinese_remainder_theorem
 And the flag is one of these roots
 
 code:
-[Java](https://ideone.com/4QJrrY)
+[Java](https://ideone.com/4QJrrY),
 [Python](https://ideone.com/wbZXAG)
 
 
@@ -159,13 +158,14 @@ while(len(flag)<100):
 flag = int(flag.encode('hex'),16)
 '''
 
-you can use this website to convert the square root to hexdecimal 
+I used this website to convert the square root to hexdecimal, but you can write your own code.
 
 https://www.rapidtables.com/convert/number/decimal-to-hex.html
 
+
 after converting the number, use this code to print the flag:
 
-[Java](https://ideone.com/E3uGOU)
+[Java](https://ideone.com/E3uGOU),
 [python](https://ideone.com/tDHMIt)
 
 I hope you've enjoyed and learned :D
