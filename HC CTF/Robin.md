@@ -87,13 +87,13 @@ code :
 [Java](https://ideone.com/sMKy2X)
 [Python](https://ideone.com/Xo3Vj3)
 
-for python :
+    for python :
 
-n = 9816209 + 134636r + 128680r² + 88r³ + 51(r*r³)
+	n = 9816209 + 134636r + 128680r² + 88r³ + 51(r*r³)
 
-n-9816209 = 134636r + 128680r² + 88r³ + 51(r*r³)
+	n-9816209 = 134636r + 128680r² + 88r³ + 51(r*r³)
 
-(n-9816209)/r = 134636 + 128680r + 88r² + 51r³
+	(n-9816209)/r = 134636 + 128680r + 88r² + 51r³
 
 
 Now we know the values of n,p,q and the cipher text , and we want to know the value of flag, wich is the square root of the cipher text modulo n.
