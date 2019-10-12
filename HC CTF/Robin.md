@@ -10,7 +10,7 @@ There are 3 files given in this challenge:
 
 At the beginning we have to read the python script to understand how the message was encrypted.
 
---------------------------------------
+```
 def GenKey(k):
     while True:
         r=getrandbits(k)
@@ -30,7 +30,7 @@ def GenKey(k):
 private_key,public_key = GenKey(256)
 
 cipher = flag**2 % public_key
---------------------------------------
+```
 
 In these lines of code, the public key and the cipher text was generated.
 
