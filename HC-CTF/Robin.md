@@ -76,11 +76,9 @@ n = p*q
 n = public key = 7470857157955704803940003567468318902063888809719567376503613129007013716743925892450018252783386138850642972088591883052262361283298353312476212612525048118810465982103089375176761352934813149353517982950737995540502531426318532874440815137600167002633585531497402594289176138883080119116491271670468863018241
 
 
-Now we want to figure out the value of r, becuase that's the only way to find the value of p and q.
+Now we want to figure out the value of r, becuase it's the only way to find the value of p and q.
 
 I used a method called [bisection method](https://en.wikipedia.org/wiki/Bisection_method) (binary search) for finding the value of r, p and q.
-
-
 
 
 code :
@@ -96,11 +94,15 @@ code :
 	(n-9816209)/r = 134636 + 128680r + 88r² + 51r³
 
 
+
+
 Now we know the values of n,p,q and the cipher text , and we want to know the value of flag, wich is the square root of the cipher text modulo n.
+
+
 
 So this challange is a [Rabin cryptosystem](https://en.wikipedia.org/wiki/Rabin_cryptosystem) challange 
 
-The Decryption algorithm run as follow :
+Rabin cryptosystem decryption algorithm of runs as follow :
 
 1. Let's define cipher text as 'c'
 
