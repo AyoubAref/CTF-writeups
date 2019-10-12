@@ -1,5 +1,6 @@
  # Category
---------------------------------------
+Cryptography
+
 
 This is a write-up on how I solved Robin from HC CTF.
 
