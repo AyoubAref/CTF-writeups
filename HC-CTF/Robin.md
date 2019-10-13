@@ -133,12 +133,7 @@ Now we find out the square roots of c, so the last step is finding the flag.
 We need to convert each square root from decimal to hexdecimal then convert each two digits of the result to character (using ascii code)
 (This is the inverse method of the code below)
 
-'''
-flag = open('flag.txt').read().strip()
-while(len(flag)<100):
-    flag+='A'
-flag = int(flag.encode('hex'),16)
-'''
+![Image](code2.png "code")
 
 I used this website to convert the square root to hexdecimal, but you can write your own code.
 
