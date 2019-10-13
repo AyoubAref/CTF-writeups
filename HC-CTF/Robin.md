@@ -39,9 +39,14 @@ def GenKey(k):
 private_key,public_key = GenKey(256)
 
 cipher = flag**2 % public_key
+
+with open('flag.enc','w') as f:
+	f.write('Cipher Text = ' + str(cipher))
+with open('public_key.txt','w') as f:
+	f.write('Public Key = ' + str(public_key))
 ```
 
-In these lines of code, the public key and the cipher text was generated.
+In the code above, the public key and the cipher text was generated.
 
 GenKey function returns the value of n, where n = p*q and p and q are prime numbers.
 
@@ -113,7 +118,7 @@ Rabin cryptosystem decryption algorithm of runs as follow :
        Mq = c**((q+1)/4) mod q
 	
 	
-###### Notice that always p+1 ≡ 0 (mod 4) and q+1 ≡ 0 (mod 4)
+##### Notice that always p+1 ≡ 0 (mod 4) and q+1 ≡ 0 (mod 4)
 
 I used an algorithm called [modular exponentiation](https://en.wikipedia.org/wiki/Modular_exponentiation) To compute Mp and Mq as fast as possible (time complexity O(lg(p)+lg(q))).
 
@@ -165,9 +170,9 @@ I used this website to convert the square root to hexdecimal, but you can write 
 https://www.rapidtables.com/convert/number/decimal-to-hex.html
 
 
-after converting the number, use this code to print the flag:
+after converting the number to hexdecimal, use this code to print the flag:
 
 [Java](https://ideone.com/E3uGOU),
 [python](https://ideone.com/tDHMIt)
 
-I hope you've enjoyed and learned :D
+I hope you enjoyed and learned :D
