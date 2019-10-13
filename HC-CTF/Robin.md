@@ -80,7 +80,7 @@ Now we know the values of n,p,q and the cipher text , and we want to know the va
 
 
 
-So this challange is a [Rabin cryptosystem](https://en.wikipedia.org/wiki/Rabin_cryptosystem) challange 
+So this challenge is a [Rabin cryptosystem](https://en.wikipedia.org/wiki/Rabin_cryptosystem) challenge 
 
 Rabin cryptosystem decryption algorithm of runs as follow :
 
