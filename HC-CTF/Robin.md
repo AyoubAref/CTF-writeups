@@ -19,32 +19,7 @@ There are 3 files given in this challenge:
 
 At the beginning we have to read the python script to understand how the message was encrypted.
 
-```
-def GenKey(k):
-    while True:
-        r=getrandbits(k)
-        while(r%2):
-            r=getrandbits(k)
-        vp = 36655
-        vq = 6695
-        c = 5
-        p = vp + (c*2)*r + (c*3) * r**2
-        q = vq + (c*17) * r**2 + (c*18) * r
-        p /= 5
-        q /= 5
-        n = p * q
-        if(isPrime(p) and isPrime(q)):
-            return (p,q) , n
-
-private_key,public_key = GenKey(256)
-
-cipher = flag**2 % public_key
-
-with open('flag.enc','w') as f:
-	f.write('Cipher Text = ' + str(cipher))
-with open('public_key.txt','w') as f:
-	f.write('Public Key = ' + str(public_key))
-```
+![Image](code1.png "code")
 
 In the code above, the public key and the cipher text was generated.
 
