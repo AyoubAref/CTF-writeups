@@ -19,29 +19,9 @@ There are 3 files given in this challenge:
 
 At the beginning we have to read the python script to understand how the message was encrypted.
 
-```
-def GenKey(k):
-    while True:
-        r=getrandbits(k)
-        while(r%2):
-            r=getrandbits(k)
-        vp = 36655
-        vq = 6695
-        c = 5
-        p = vp + (c*2)*r + (c*3) * r**2
-        q = vq + (c*17) * r**2 + (c*18) * r
-        p /= 5
-        q /= 5
-        n = p * q
-        if(isPrime(p) and isPrime(q)):
-            return (p,q) , n
+![Image](code1.png "code")
 
-private_key,public_key = GenKey(256)
-
-cipher = flag**2 % public_key
-```
-
-In these lines of code, the public key and the cipher text was generated.
+In the code above, the public key and the cipher text was generated.
 
 GenKey function returns the value of n, where n = p*q and p and q are prime numbers.
 
@@ -76,11 +56,9 @@ n = p*q
 n = public key = 7470857157955704803940003567468318902063888809719567376503613129007013716743925892450018252783386138850642972088591883052262361283298353312476212612525048118810465982103089375176761352934813149353517982950737995540502531426318532874440815137600167002633585531497402594289176138883080119116491271670468863018241
 
 
-Now we want to figure out the value of r, becuase that's the only way to find the value of p and q.
+Now we want to figure out the value of r, becuase it's the only way to find the value of p and q.
 
 I used a method called [bisection method](https://en.wikipedia.org/wiki/Bisection_method) (binary search) for finding the value of r, p and q.
-
-
 
 
 code :
@@ -96,11 +74,15 @@ code :
 	(n-9816209)/r = 134636 + 128680r + 88r² + 51r³
 
 
+
+
 Now we know the values of n,p,q and the cipher text , and we want to know the value of flag, wich is the square root of the cipher text modulo n.
+
+
 
 So this challange is a [Rabin cryptosystem](https://en.wikipedia.org/wiki/Rabin_cryptosystem) challange 
 
-The Decryption algorithm run as follow :
+Rabin cryptosystem decryption algorithm of runs as follow :
 
 1. Let's define cipher text as 'c'
 
@@ -111,9 +93,9 @@ The Decryption algorithm run as follow :
        Mq = c**((q+1)/4) mod q
 	
 	
-###### Notice that always p+1 ≡ 0 (mod 4) and q+1 ≡ 0 (mod 4)
+##### Notice that always p+1 ≡ 0 (mod 4) and q+1 ≡ 0 (mod 4)
 
-I used an algorithm called binary exponentiation To compute Mp and Mq as fast as possible (time complexity O(lg(p)+lg(q))).
+I used an algorithm called [modular exponentiation](https://en.wikipedia.org/wiki/Modular_exponentiation) To compute Mp and Mq as fast as possible (time complexity O(lg(p)+lg(q))).
 
 code:
 [Java](https://ideone.com/Aj5Abe),
@@ -163,9 +145,9 @@ I used this website to convert the square root to hexdecimal, but you can write 
 https://www.rapidtables.com/convert/number/decimal-to-hex.html
 
 
-after converting the number, use this code to print the flag:
+after converting the number to hexdecimal, use this code to print the flag:
 
 [Java](https://ideone.com/E3uGOU),
 [python](https://ideone.com/tDHMIt)
 
-I hope you've enjoyed and learned :D
+I hope you enjoyed and learned :D
