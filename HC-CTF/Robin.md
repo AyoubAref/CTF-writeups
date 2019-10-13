@@ -115,7 +115,7 @@ Rabin cryptosystem decryption algorithm of runs as follow :
 	
 ###### Notice that always p+1 ≡ 0 (mod 4) and q+1 ≡ 0 (mod 4)
 
-I used an algorithm called binary exponentiation To compute Mp and Mq as fast as possible (time complexity O(lg(p)+lg(q))).
+I used an algorithm called [modular exponentiation](https://en.wikipedia.org/wiki/Modular_exponentiation) To compute Mp and Mq as fast as possible (time complexity O(lg(p)+lg(q))).
 
 code:
 [Java](https://ideone.com/Aj5Abe),
